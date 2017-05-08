@@ -13,7 +13,13 @@ fi
 echo 'Enter the name of the branch: '
 read branch
 
-git push origin $branch
+if [ -n "$var" ]; then
+    echo "not empty"
+    git push origin $branch
+else
+    echo "empty"
+    git push origin master
+fi
 
 echo 'press enter when done'
 read
